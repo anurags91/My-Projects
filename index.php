@@ -35,7 +35,7 @@ include("connection.php")
             <input type="text"class="input"name="cpassword"><br>
         </div>
         <div class="input_field">
-            <input type="button" value="Register" class="btn" name="register">
+            <input type="submit" value="Register" class="btn" name="register">
         </div>
     </div>
     </form>
@@ -48,11 +48,18 @@ if($_POST['register'])
     // here $user_name,$gmail,password,con_password are the variable used to
     //  store the value current variable and no relation with any other variable name
     $user_name=     $_POST['uname'];
-    $gmail  =       $_POST['fname'];
+    $gmail  =       $_POST['gmail'];
     $password =     $_POST['password'];
     $con_password=  $_POST['cpassword'];
 
-    $query = "INSERT INTO formdata values ('$user_name','$gmail','$password','$con_password')";
+    $query = "INSERT INTO FORMDATA VALUES ('$user_name','$gmail','$password','$con_password')";
     $data = mysqli_query($conn,$query);
+    if($data)
+    {
+        echo"Data Sent Successfully";
+    }
+    else{
+        echo"failed";
+    }
 }
 ?>
