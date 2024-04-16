@@ -29,7 +29,7 @@
 }
 input
 {
-    grid-column: span 5;
+    grid-column: span 4;
     width: 260px;
     height: 70px;
     background-color: #fff7f7;

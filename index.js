@@ -2,8 +2,12 @@ var result = document.getElementById("result");
 function display(number)
 {
   
-  result.value += number; 
-  
+  if(number==="/"){
+    result.value +="Math.sqrt";
+  }
+  else{
+    result.value += number; 
+  }
 }
 function calculate()
 {
