@@ -1,31 +1,29 @@
-var result = document.getElementById("result");
-function display(number)
-{
-  
-  if(number==="/"){
-    result.value +="Math.sqrt";
+const display = document.querySelector(".display");
+const buttons = document.querySelectorAll("button");
+const specialChars = ["%","*","/","-","+","="];
+let output = "";
+
+const calculate = (btnValue) => {
+  display.focus();
+  if(btnValue === "=" && output !== ""){
+    output = eval(output.replace("%","/100"));
+  }
+  else if(btnValue === "AC"){
+    output = "";
+  }
+  else if (btnValue ==="DEL"){
+    output = output.toString().slice(0,-1);
   }
   else{
-    result.value += number; 
+    if(output === "" && specialChars.includes(btnValue)) return;
+    output += btnValue;
   }
-}
-function calculate()
-{
- var final_number = result.value;
- var final_result = eval(final_number);
- result.value = final_result;
-}
-function clr()
-{
-    result.value = "";
-}
-function del()
-{
-    result.value = result.value.slice(0,-1);
-}
-function sqrt()
-{
-  screen.value=Math.sqrt(screen.value,2);
-}1515
+  display.value = output;
+  };
+  buttons.forEach((button) =>{
+    button.addEventListener("click",(e) => calculate(e.target.dataset.value));
+  });
+
+
 
 

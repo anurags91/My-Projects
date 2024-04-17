@@ -3,63 +3,82 @@
     padding: 0%;
    box-sizing: border-box;
    font-family: serif;
-   font-weight: bold;
-   font-size: 22px; 
-   color: rgb(7, 7, 7);
-   background-color: whitesmoke;
+   
 } 
-
+.title
+{
+    align-items: center;
+    margin-bottom: 100px;
+}
+ body
+{
+   background-color:#250821;
+}   
+h1{
+    text-align: center; 
+    padding: 20px;
+    color:orange;
+    text-shadow: 0 0 10px rgba(18,247,255,0.3),
+    0 0 20px rgba(18,247,255,0.3),
+    0 0 30px rgba(18,247,255,0.3),
+    0 0 40px rgba(18,247,255,0.3),
+    0 0 70px rgba(18,247,255,0.3),
+    0 0 80px rgba(18,247,255,0.3),
+    0 0 100px rgba(18,247,255,0.3),
+    0 0 150px rgba(18,247,255,0.3);
+ ;
+} 
 .container
 {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.calculator
-{
-    background-color: rgb(128, 125, 125);
-    padding: 15px;
-    border-radius: 30px;
-    box-shadow: inset 5px 5px 12px #fff,
-                        5px 5px 12px rgb(0, 0, 0,0.14);
-     display:grid;
-     grid-template-columns: repeat(4,70px);
+    margin: 20px auto 0 auto;
+   /* position:relative; */
+    max-width: 300px;
+   /* width: 100%; */
+   border-radius: 12px;
+   padding:10px 20px 20px;
+   background: #fff;
+   box-shadow: 0 0 10px rgba(18,247,255,0.3),
+   0 0 20px rgba(18,247,255,0.3),
+   0 0 30px rgba(18,247,255,0.3),
+   0 0 40px rgba(18,247,255,0.3),
+   0 0 70px rgba(18,247,255,0.3),
+   0 0 80px rgba(18,247,255,0.3),
+   0 0 100px rgba(18,247,255,0.3),
+   0 0 150px rgba(18,247,255,0.3);
 
 }
-input
+.display
 {
-    grid-column: span 4;
-    width: 260px;
-    height: 70px;
-    background-color: #fff7f7;
-    border: none;
-    box-shadow: inset -5px -5px 12px #fff,
-                inset 5px 5px 12px rgb(0, 0, 0,0.14);
-    border-radius: 30px;
-    outline: none;
-    font-size: 50px;
-    text-align: end;
-    margin: 40px auto;
-    padding: 10px;
+   height: 80px;
+   width: 100%;
+   outline: none;
+   border: none;
+   text-align:right;
+   margin-bottom: 10px;
+   font-size: 25px;
+   color: #000e1a;
+   pointer-events: none; 
  }
-input::placeholder{
-    color: rgb(15, 15, 15);
-}
-button
+
+.buttons
 {
-    width: 48px;
-    height: 48px;
-    background-color: rgb(154, 165, 161);
-box-shadow: inset -5px -5px 12px #fff,
- 5px 5px 12px rgb(0, 0, 0,0.14);
-border-radius: 10px;
-border: none;
-margin: 8px auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4,1fr);
+    
 }
-.equal
+.buttons button{
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #eee;
+}
+.buttons button:active{
+    transform: scale(0.99);
+}
+.operator
 {
-  width: 105px;
-  border-radius: 20px; 
-  margin: 10px 10px; 
+    color:#2f9fff
 }
