@@ -7,7 +7,8 @@
             }
            table {
                background-color:white;
-            }
+               text-align:center;
+                     }
             .delete,.update
             {
                 background-color:red;

@@ -12,7 +12,7 @@ include("connection.php")
 </head>
 <body>
     <div class="container">
-        <form action="#" method="POST">
+        <form action="#" method="POST" autocomplete="off">
         <div class="title">
             Resistration Form
         </div>
@@ -25,15 +25,15 @@ include("connection.php")
         <div class="input_field">
             <label for="text">Gmail</label>
              <!-- name is not related with the your label name -->
-            <input type="gmail"class="input" name="gmail"><br>
+            <input type="email"class="input" name="gmail"><br>
         </div>
         <div class="input_field">    
             <label for="text">Password</label>
-            <input type="text"class="input" name="password"><br>
+            <input type="password"class="input" name="password"><br>
         </div>
         <div class="input_field">    
             <label for="text">Confirm Password</label>
-            <input type="text"class="input"name="cpassword"><br>
+            <input type="password"class="input"name="cpassword"><br>
         </div>
         <div class="input_field">
             <input type="submit" value="Register" class="btn" name="register">
@@ -57,7 +57,7 @@ if($_POST['register'])
     $data = mysqli_query($conn,$query);
     if($data)
     {
-        echo"Data Sent Successfully";
+        header('location:display.php');
     }
     else{
         echo"failed";
