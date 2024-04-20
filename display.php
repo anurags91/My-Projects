@@ -8,7 +8,7 @@
            table {
                background-color:white;
             }
-            .delete
+            .delete,.update
             {
                 background-color:red;
                 color:white;
@@ -20,6 +20,10 @@
                 height:30px;
                 width:100px;
                
+
+            }
+            .update{
+               background-color:grey;
 
             }
         </style>
@@ -42,8 +46,9 @@ if($total != 0)
 {
     ?>
     <h2 align="center">Admin DashBoard All Records</h2>
-     <center><table border="1" cellspacing="7" width="80%">
+     <center><table border="1" cellspacing="7" width="85%">
         <tr>
+        <th width ="5%">ID</th>
         <th width ="20%">Username</th>
         <th width ="20%">Gmail</th>
         <th width ="15%">Password</th>
@@ -54,11 +59,15 @@ if($total != 0)
     while($result = mysqli_fetch_assoc($data))
     {
       echo"  <tr>
+        <td>".$result['id']."</td>
         <td>".$result['username']."</td>
         <td>".$result['gmail']."</td>
         <td>".$result['password']."</td>
         <td>".$result['confirm_password']."</td>
-        <td><a href='#'><input type='submit' value='Delete' class='delete'></a></td>
+
+        <td><a href='update_design.php?id=$result[id]'><input type='submit' value='Update' class='update'></a>
+
+        <a href='delete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick='return checkdelete()'></a></td>
     </tr> 
     ";
         // echo"Table has a Record";
@@ -72,5 +81,9 @@ else{
 ?>
 </table>
 </center>
-<!-- echo $result['username']." " 
-        .$result['gmail']." ".$result['password']." ".$result['con_password']; -->
+<script>
+    function checkdelete()
+    {
+        return confirm('Are you sure to delete this Record?');
+    }
+</script>

@@ -6,9 +6,10 @@ $dbname ="loginform";
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 if($conn)
 {
-    echo"Connection Successful";
+   //echo"Connection Successful";
 }
 else{
     echo "Failed";
+
 }
 ?>
